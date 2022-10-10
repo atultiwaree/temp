@@ -1,13 +1,8 @@
-export const decact = (val) => {
+const action = (data) => {
   return {
-    type: "DEC",
-    num: 1,
+    type: "ADD",
+    data,
   };
 };
 
-export const incact = (val) => {
-  return {
-    type: "INC",
-    num: 1,
-  };
-};
+export default action;

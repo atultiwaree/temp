@@ -11,6 +11,7 @@
     "react-redux": "^8.0.4",
     "react-scripts": "5.0.1",
     "redux": "^4.1.0",
+    "redux-persist": "^6.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -36,5 +37,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "See first I made increment reducer Second I mader decrtement reducer",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

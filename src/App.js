@@ -1,14 +1,31 @@
-import React from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import action from "./redux/action";
 import { useSelector } from "react-redux";
-import { Buttons } from "./components/buttongroup";
 const App = () => {
-  const get = useSelector((state) => state);
-
+  const [state, setState] = useState();
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state);
   return (
-    <div className="container" style={{ marginLeft: "30px" }}>
-      <p>Counter Increase : {get.inc.num}</p>
-      <p>Counter Decrease : {get.dec.num}</p>
-      <Buttons />
+    <div className="container">
+      {console.log(selector)}
+      <div className="left">
+        <input
+          type="text"
+          onChange={(e) => setState(e.target.value)}
+          name="text"
+          id=""
+        />
+        <button onClick={() => dispatch(action(state))}>Add task</button>
+      </div>
+      <div className="right">
+        <h2>All tasks🔻 </h2>
+        <ul>
+          {selector.map((x, i) => (
+            <li key={i}>{x}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
